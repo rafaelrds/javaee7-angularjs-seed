@@ -1,0 +1,32 @@
+<div data-ng-controller="CarrinhoController as carrinhoCtrl">
+    <h1 class="page-header">Carrinho</h1>
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="produto in carrinhoCtrl.listaProdutos" data-ng-if="carrinhoCtrl.carrinho[produto.codigo] !== undefined">
+                <td><img src="{{produto.imgUrl}}" height="150" width="150"></img>
+                </td>
+                <td>{{produto.titulo}}</td>
+                <td>R${{produto.preco}}</td>
+                <td>{{carrinhoCtrl.carrinho[produto.codigo]}}</td>
+                <th>
+                    <button type="button" class="btn btn-warning" data-ng-click="carrinhoCtrl.removeItem(produto.codigo)">Remover</button>
+                </th>
+            </tr>
+            <tr>
+                <th>TOTAL</th>
+                <th></th>
+                <th>R${{carrinhoCtrl.calculaTotalCarrinho()}}</th>
+                <th></th>
+            </tr>
+        </tbody>
+    </table>
+</div>
