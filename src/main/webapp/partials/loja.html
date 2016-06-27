@@ -1,0 +1,6 @@
+<div data-ng-controller="LojaController as lojaCtrl">
+    <h1 class="page-header">Loja</h1>
+    <div data-ng-repeat="produto in lojaCtrl.produtos" class="row">
+        <div item-produto produto="produto" adicionar-produto="lojaCtrl.adicionarNoCarrinho"></div>
+    </div>
+</div>

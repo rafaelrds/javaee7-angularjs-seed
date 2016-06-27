@@ -1,0 +1,13 @@
+<div class="row-fluid">
+	<div class="col-sm-2">
+		<img src="{{produto.imgUrl}}" height="150" width="150"></img>
+	</div>
+	<div class="col-sm-7">
+		<h4>{{produto.titulo}}</h4>
+		<h5>{{produto.descricao}}</h5>
+	</div>
+	<div class="col-sm-2">
+		<h3>R${{produto.preco}}</h3>
+		<button type="button" class="btn btn-primary" data-ng-click="adicionarNoCarrinho(produto.codigo)">Adicionar no carrinho</button>
+	</div>
+</div>
